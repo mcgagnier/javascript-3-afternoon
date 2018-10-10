@@ -40,7 +40,12 @@
 */
 
 function showValues( obj ) {
-  //Code Here
+  var str = ""
+  for(var key in obj) {
+    console.log(obj[key])
+    str = str + obj[key]
+  }
+  return str;
 }
 
 
@@ -53,7 +58,14 @@ function showValues( obj ) {
   Return the updated object.
 */
 
-//Code Here
+function greaterThan10(obj) {
+  for(var key in obj) {
+    if(obj[key] > 10) {
+      obj[key] = 0;
+    }
+  }
+  return obj;
+}
 
 
 
@@ -65,7 +77,12 @@ function showValues( obj ) {
   Return the updated object.
 */
 
-//Code Here
+function double(obj) {
+  for(var key in obj) {
+    obj[key] = obj[key]*2
+  }
+  return obj
+}
 
 
 
@@ -79,7 +96,16 @@ function showValues( obj ) {
   By the end of the for in loop, you should have a sentence, return that sentence.
 */
 
-//Code Here
+function secrets(obj) {
+  var str = "";
+  for(var key in obj) {
+    var firstTwo = key.slice(0, 2)
+    if(firstTwo == "sh") {
+      str = str+obj[key]
+    }
+  }
+  return str;
+}
 
 
 
@@ -110,7 +136,15 @@ function showValues( obj ) {
   Delete the property password and return the object.
 */
 
-//Code Here
+function removePassword(obj) {
+  delete obj.password
+  // for(var key in removePassword) {
+  //   if (obj[key] = password) {
+  //     delete obj[key]
+  //   }
+  // }
+  return obj
+}
 
 
 
@@ -130,7 +164,11 @@ var deleteTheBigNumbers = {
 */
 
 //Code Here
-
+for ( var key in deleteTheBigNumbers) {
+  if(deleteTheBigNumbers[key] > 100) {
+    delete deleteTheBigNumbers[key];
+  }
+}
 
 
 ////////// PROBLEM 7 //////////
@@ -142,7 +180,15 @@ var deleteTheBigNumbers = {
   Return the updated object.
 */
 
-//Code Here
+function startsWithK(obj) {
+  for(var key in obj) {
+    var first = key.slice(0, 1)
+    if ( first == "k" ) {
+      delete obj[key]
+    }
+  }
+  return obj
+}
 
 
 
@@ -157,6 +203,16 @@ var deleteTheBigNumbers = {
   (hint: the method includes() may be of use...)
 */
 
-//Code Here
+function hiddenTreasure(obj) {
+  // console.log(obj);
+  for(var key in obj) {
+   var ans = obj[key].includes('treasure');
+   console.log(obj[key]);
+   if(ans === false) {
+     delete obj[key];
+   } 
+}
+return obj;
+}
 
 
